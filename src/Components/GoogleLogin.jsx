@@ -1,18 +1,29 @@
 import React from "react";
 import useAuth from "../Hooks/useAuth";
+import Swal from "sweetalert2";
 
 const GoogleLogin = () => {
   const { googleLogin } = useAuth();
 
   const handleGoogleLogin = () => {
     googleLogin()
-    .then(result => {
+      .then((result) => {
         console.log(result.user);
-    })
-    .catch(error => {
-        console.log(error.message);
-    })
-  }
+        if (result.user) {
+          Swal.fire({
+            title: "Login successful!",
+            icon: "success",
+          });
+        }
+      })
+      .catch((error) => {
+        Swal.fire({
+          title: `${error.message}`,
+          icon: "error",
+          draggable: true,
+        });
+      });
+  };
 
   return (
     <div>

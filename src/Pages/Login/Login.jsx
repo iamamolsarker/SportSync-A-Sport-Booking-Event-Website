@@ -2,23 +2,35 @@ import React from "react";
 import { Link } from "react-router";
 import useAuth from "../../Hooks/useAuth";
 import GoogleLogin from "../../Components/GoogleLogin";
+import Swal from "sweetalert2";
 
 const Login = () => {
-    const {loginUserWithEmail} = useAuth()
+  const { loginUserWithEmail } = useAuth();
 
-    const handleLogin = e => {
-        e.preventDefault();
-        const form = e.target;
-        const email = form.email.value;
-        const password = form.password.value;
-        console.log(email, password);
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(email, password);
 
-        loginUserWithEmail(email, password)
-        .then(result => {
-            console.log(result.user);
-        })
-        .catch(error => console.log(error.message))
-    }
+    loginUserWithEmail(email, password)
+      .then((result) => {
+        console.log(result.user);
+        if (result.user) {
+          Swal.fire({
+            title: "Login successful!",
+            icon: "success",
+          });
+        }
+      })
+      .catch((error) => {
+        Swal.fire({
+          title: `${error.message}`,
+          icon: "error",
+        });
+      });
+  };
   return (
     <>
       <div className="max-w-sm mx-auto min-h-screen items-center justify-center pt-24">
@@ -99,12 +111,12 @@ const Login = () => {
             </div>
             <p className="text-sm">
               Don't have an account?{" "}
-              <Link className="text-blue-500" to={"/Register"}>
+              <Link className="text-orange-500" to={"/Register"}>
                 Register here
               </Link>
             </p>
             <input
-              className="bg-blue-500 w-full p-2 text-white font-semibold"
+              className="bg-gradient-to-r from-orange-500 to-red-600 text-white text-lg w-full p-2 font-semibold cursor-pointer"
               type="submit"
               value="Login"
             />

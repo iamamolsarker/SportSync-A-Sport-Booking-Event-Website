@@ -2,23 +2,41 @@ import React from "react";
 import { Link } from "react-router";
 import useAuth from "../../Hooks/useAuth";
 import GoogleLogin from "../../Components/GoogleLogin";
+import Swal from "sweetalert2";
 
 const Register = () => {
-  const { createUserWithEmail } = useAuth();
+  const { createUserWithEmail, updateUser } = useAuth();
 
-  const handleRegister = (e) => {
+  const handleRegister = async (e) => {
     e.preventDefault();
     const form = e.target;
-    const email = form.email.value;
-    const password = form.password.value;
+    const formData = new FormData(form);
+    const { name, email, password, photo } = Object.fromEntries(
+      formData.entries()
+    );
 
-    createUserWithEmail(email, password)
+    await createUserWithEmail(email, password)
       .then((result) => {
         console.log(result.user);
+        if (result.user) {
+          Swal.fire({
+            title: "Registered successfully!",
+            icon: "success",
+          });
+        }
       })
       .catch((error) => {
-        console.log(error);
+        Swal.fire({
+          title: `${error.message}`,
+          icon: "error",
+        });
       });
+
+    await updateUser(name, photo)
+      .then(() => {
+        //updated profile
+      })
+      .catch((error) => console.log(error));
   };
 
   return (
@@ -150,12 +168,12 @@ const Register = () => {
             </div>
             <p className="text-sm">
               Already have an account?{" "}
-              <Link className="text-blue-500" to={"/login"}>
+              <Link className="text-orange-500" to={"/login"}>
                 Login here
               </Link>
             </p>
             <input
-              className="bg-blue-500 w-full p-2 text-white font-semibold"
+              className="bg-gradient-to-r from-orange-500 to-red-600 text-white text-lg w-full p-2 font-semibold cursor-pointer"
               type="submit"
               value="Register"
             />
