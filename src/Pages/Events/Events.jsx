@@ -1,11 +1,11 @@
 import React from 'react';
 
-const ManageEvent = () => {
+const Events = () => {
     return (
         <div>
-            manage event
+            all events
         </div>
     );
 };
 
-export default ManageEvent;
+export default Events;

@@ -4,6 +4,9 @@ import Home from "../Pages/Home/Home"
 import Register from "../Pages/Register/Register";
 import Login from "../Pages/Login/Login"
 import ErrorElement from "../Pages/Error/ErrorElement";
+import MyBookings from "../Pages/Event User/MyBookings";
+import ManageEvent from "../Pages/Event Manager/ManageEvent";
+import Events from "../Pages/Events/Events";
 
 export const router = createBrowserRouter([
   {
@@ -14,6 +17,18 @@ export const router = createBrowserRouter([
         {
             index: true,
             Component: Home,
+        },
+        {
+          path: "my-event",
+          element:<MyBookings></MyBookings>
+        },
+        {
+          path: "manage-event",
+          element:<ManageEvent></ManageEvent>
+        },
+        {
+          path: "all-event",
+          element:<Events></Events>
         },
         {
             path: "register",
