@@ -1,11 +1,12 @@
 import React from "react";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import useAuth from "../../Hooks/useAuth";
 import GoogleLogin from "../../Components/GoogleLogin";
 import Swal from "sweetalert2";
 
 const Register = () => {
   const { createUserWithEmail, updateUser } = useAuth();
+  const navigate = useNavigate()
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -23,6 +24,8 @@ const Register = () => {
             title: "Registered successfully!",
             icon: "success",
           });
+          navigate("/")
+
         }
       })
       .catch((error) => {

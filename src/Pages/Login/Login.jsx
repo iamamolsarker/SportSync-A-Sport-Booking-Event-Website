@@ -1,11 +1,14 @@
 import React from "react";
-import { Link } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import useAuth from "../../Hooks/useAuth";
 import GoogleLogin from "../../Components/GoogleLogin";
 import Swal from "sweetalert2";
 
 const Login = () => {
   const { loginUserWithEmail } = useAuth();
+  const location = useLocation();
+  const navigate = useNavigate();
+  const from = location.state || "/"
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -22,6 +25,7 @@ const Login = () => {
             title: "Login successful!",
             icon: "success",
           });
+          navigate(from);
         }
       })
       .catch((error) => {
@@ -121,7 +125,7 @@ const Login = () => {
               value="Login"
             />
           </form>
-          <GoogleLogin></GoogleLogin>
+          <GoogleLogin from={from}></GoogleLogin>
         </div>
       </div>
     </>

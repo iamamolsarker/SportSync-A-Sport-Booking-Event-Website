@@ -22,7 +22,7 @@ const Slider = () => {
       pagination={{ clickable: true }}
       style={{}}
     >
-      <div className="min-h-[75vh] flex flex-col items-center justify-center">
+      <div className="min-h-[75vh] flex flex-col items-center justify-center z-10">
         <SwiperSlide>
           <div
             className=" px-15 min-h-[75vh] flex justify-center"

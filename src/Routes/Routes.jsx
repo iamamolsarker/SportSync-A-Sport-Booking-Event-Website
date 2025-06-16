@@ -7,6 +7,8 @@ import ErrorElement from "../Pages/Error/ErrorElement";
 import MyBookings from "../Pages/Event User/MyBookings";
 import ManageEvent from "../Pages/Event Manager/ManageEvent";
 import Events from "../Pages/Events/Events";
+import PrivateRoutes from "./PrivateRoutes";
+import CreateEvent from "../Pages/Event Manager/CreateEvent";
 
 export const router = createBrowserRouter([
   {
@@ -20,11 +22,15 @@ export const router = createBrowserRouter([
         },
         {
           path: "my-event",
-          element:<MyBookings></MyBookings>
+          element:<PrivateRoutes><MyBookings></MyBookings></PrivateRoutes>
         },
         {
           path: "manage-event",
-          element:<ManageEvent></ManageEvent>
+          element:<PrivateRoutes><ManageEvent></ManageEvent></PrivateRoutes>
+        },
+        {
+          path: "/add-event",
+          element:<PrivateRoutes><CreateEvent></CreateEvent></PrivateRoutes>
         },
         {
           path: "all-event",

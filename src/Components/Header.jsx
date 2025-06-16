@@ -2,6 +2,7 @@ import React from "react";
 import { Link, NavLink } from "react-router";
 import useAuth from "../Hooks/useAuth";
 import Swal from "sweetalert2";
+import { Tooltip } from "react-tooltip";
 
 const Header = () => {
   const { user, logOut } = useAuth();
@@ -28,7 +29,7 @@ const Header = () => {
     </>
   );
   return (
-    <div className="navbar bg-base-100 shadow-sm">
+    <div className="navbar bg-base-100 shadow-sm z-50 relative">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -69,12 +70,15 @@ const Header = () => {
       </div>
       <div className="navbar-end">
         {user ? (
+          <>
+          <img src={user.photoURL} alt="" data-tooltip-id="profile-img-tooltip" data-tooltip-content={`${user.displayName}`} className="w-[55px] h-[55px] object-contain mr-1 border border-gray-200 rounded-full"/>
           <Link
             onClick={handleLogout}
             className="btn bg-gradient-to-r from-orange-500 to-red-600  text-white text-lg"
           >
             Logout
           </Link>
+          </>
         ) : (
           <Link
             to="/login"
@@ -84,7 +88,9 @@ const Header = () => {
           </Link>
         )}
       </div>
+      <Tooltip id="profile-img-tooltip"></Tooltip>
     </div>
+    
   );
 };
 
