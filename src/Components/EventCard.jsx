@@ -1,8 +1,9 @@
 import React from 'react';
 import { LuCalendar1, LuMapPin, LuUsers } from "react-icons/lu";
+import { Link } from 'react-router';
 
 const EventCard = ({event}) => {
-    const {eventName, eventType, eventDate, description, eventImage, status, location, creatorName} = event;
+    const {eventName, eventType, eventDate, description, eventImage, location, creatorName, _id} = event;
     return (
         <div className='rounded-xl border border-gray-300'>
             <div className='relative'>
@@ -17,7 +18,7 @@ const EventCard = ({event}) => {
                     <div className='flex gap-1 items-center'><LuMapPin size={"20px"} className='text-orange-500'/> {location}</div>
                     <div className='flex gap-1 items-center'><LuUsers size={"20px"} className='text-orange-500'/>Organized by: {creatorName} </div>
                 </div>
-                <button className='bg-gradient-to-r from-orange-500 to-red-600 text-white rounded-xl w-full px-3 py-2 font-medium'>View Details</button>
+                <Link to={`/events/${_id}`} className='bg-gradient-to-r from-orange-500 to-red-600 text-white rounded-xl w-full block text-center px-3 py-2 font-medium'>View Details</Link>
             </div>
         </div>
     );

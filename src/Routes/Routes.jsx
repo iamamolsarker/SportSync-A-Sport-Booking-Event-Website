@@ -9,6 +9,8 @@ import ManageEvent from "../Pages/Event Manager/ManageEvent";
 import Events from "../Pages/Events/Events";
 import PrivateRoutes from "./PrivateRoutes";
 import CreateEvent from "../Pages/Event Manager/CreateEvent";
+import EventDetails from "../Pages/EventDetails/EventDetails";
+import LoaderAnimation from "../Components/LoaderAnimation";
 
 export const router = createBrowserRouter([
   {
@@ -35,6 +37,13 @@ export const router = createBrowserRouter([
         {
           path: "all-event",
           element:<Events></Events>
+        },
+        {
+          path: "events/:id",
+          element: <PrivateRoutes><EventDetails></EventDetails></PrivateRoutes>,
+          loader: ({params}) => fetch(`http://localhost:5000/events/${params.id}`),
+          hydrateFallbackElement: <LoaderAnimation></LoaderAnimation>
+
         },
         {
             path: "register",
