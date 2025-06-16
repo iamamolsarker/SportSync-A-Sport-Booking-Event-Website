@@ -17,7 +17,7 @@ const Events = () => {
         </div>
         <div className="max-w-[1300px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {allEvents.map((event) => (
-            <EventCard event={event}></EventCard>
+            <EventCard key={event._id} event={event}></EventCard>
           ))}
         </div>
       </div>

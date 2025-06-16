@@ -78,7 +78,7 @@ const MyBookingList = ({ myBookingsPromise }) => {
           </div>
         </div>
       ) : (
-        <div className="max-w-[400px] mx-auto my-14 text-center px-5 lg:px-0">
+        <div className="max-w-[400px] mx-auto my-14 text-center px-5 lg:px-0 min-h-[65vh]">
           <Lottie animationData={noDataFound} loop={true} />
           <Link className="border border-orange-500 text-lg text-orange-500 font-semibold px-4 py-1.5 rounded-xl inline-block mt-6" to="/all-event">See All Event</Link>
         </div>
