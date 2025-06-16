@@ -23,11 +23,11 @@ export const router = createBrowserRouter([
             Component: Home,
         },
         {
-          path: "my-event",
+          path: "/my-event",
           element:<PrivateRoutes><MyBookings></MyBookings></PrivateRoutes>
         },
         {
-          path: "manage-event",
+          path: "/manage-event",
           element:<PrivateRoutes><ManageEvent></ManageEvent></PrivateRoutes>
         },
         {
@@ -35,8 +35,10 @@ export const router = createBrowserRouter([
           element:<PrivateRoutes><CreateEvent></CreateEvent></PrivateRoutes>
         },
         {
-          path: "all-event",
-          element:<Events></Events>
+          path: "/all-event",
+          element:<Events></Events>,
+          loader: () => fetch("http://localhost:5000/events"),
+          hydrateFallbackElement: <LoaderAnimation></LoaderAnimation>
         },
         {
           path: "events/:id",
