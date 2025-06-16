@@ -1,5 +1,6 @@
 import React, { use } from "react";
 import EventCard from "./EventCard";
+import { Link } from "react-router";
 
 const FeaturedEventCard = ({ featuredEventsPromise }) => {
   const featuredEvent = use(featuredEventsPromise);
@@ -17,6 +18,9 @@ const FeaturedEventCard = ({ featuredEventsPromise }) => {
         {
         featuredEvent.map((event) => (<EventCard key={event._id} event={event}></EventCard>))
         }
+      </div>
+      <div className="flex justify-center mt-6">
+        <Link className="border border-orange-500 text-lg text-orange-500 font-semibold px-4 py-1.5 rounded-xl" to="/all-event">See All Event</Link>
       </div>
     </div>
   );

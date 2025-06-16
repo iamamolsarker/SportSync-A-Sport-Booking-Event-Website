@@ -1,6 +1,7 @@
 import React from "react";
+import { RiDeleteBin6Line } from "react-icons/ri";
 
-const BookingListView = ({ myBookings }) => {
+const BookingListView = ({ myBookings, handleDelete }) => {
   return (
     <>
       <div className="overflow-x-auto rounded-box border border-base-content/5 bg-base-100">
@@ -26,7 +27,7 @@ const BookingListView = ({ myBookings }) => {
                 <td className="text-lg font-medium">{booking.eventName}</td>
                 <td className="text-lg font-medium">{booking.eventDate}</td>
                 <td className="text-lg font-medium">{booking.location}</td>
-                <td></td>
+                <td><button onClick={() => handleDelete(booking._id)} className="border border-red-500 p-2 rounded cursor-pointer"><RiDeleteBin6Line size="20px" className="text-red-500"/></button></td>
               </tr>
             ))}
           </tbody>

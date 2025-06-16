@@ -36,7 +36,8 @@ const EventDetails = () => {
                 <p class="font-medium mb-1 text-gray-700">Your Email: ${user.email}</p>
                 <br>
                 <p class="font-medium text-orange-500">Event Date: ${eventDate}</p>
-                `
+                `,
+                confirmButtonColor: "#ff6900"
         });
         }
       })
@@ -44,6 +45,7 @@ const EventDetails = () => {
         Swal.fire({
             title: "You have already booked this event!",
             icon: "error",
+            confirmButtonColor: "#ff6900"
         });
       })
   };

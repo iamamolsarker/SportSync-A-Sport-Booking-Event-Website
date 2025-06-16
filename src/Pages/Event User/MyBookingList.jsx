@@ -1,6 +1,9 @@
 import React, { use, useState } from "react";
-import { CiGrid41 } from "react-icons/ci";
+import { CiBoxList, CiGrid41 } from "react-icons/ci";
 import BookingListView from "./BookingListView";
+import BookingGridView from "./BookingGridView";
+import axios from "axios";
+import Swal from "sweetalert2";
 
 const MyBookingList = ({ myBookingsPromise }) => {
   const initialBookingData = use(myBookingsPromise);
@@ -9,16 +12,60 @@ const MyBookingList = ({ myBookingsPromise }) => {
   const handleView = () => {
     setGridView(!gridView);
   };
+
+  const handleDelete = (eventId) => {
+    Swal.fire({
+      title: "Do you want to cancle?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#ff0000",
+      cancelButtonColor: "#020202",
+      confirmButtonText: "Yes, cancle it!",
+      cancelButtonText: "Don't cancle it!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        axios
+          .delete(`http://localhost:5000/event-bookings/${eventId}`)
+          .then((res) => {
+            if(res.data.deletedCount){
+              Swal.fire({
+              title: "Cancled!",
+              text: "Your booking has been cancled.",
+              icon: "success",
+              confirmButtonColor: "orange"
+            });
+
+            const remainingEvent = myBookings.filter(booking => booking._id !== eventId )
+            setMyBookings(remainingEvent);
+            }
+          })
+          .catch((error) => {
+            console.log(error.message);
+          });
+      }
+    });
+  };
   return (
     <>
       <div className="max-w-[1300px] mx-auto my-14">
-        <div>
-          <button onClick={handleView}>{gridView ? <CiGrid41/> : "list"}</button>
+        <div className="flex justify-end mb-6">
+          <button
+            className="border border-gray-200 rounded-lg p-2 cursor-pointer"
+            onClick={handleView}
+          >
+            {gridView ? <CiBoxList size="25px" /> : <CiGrid41 size="25px" />}
+          </button>
         </div>
         <div>
-          {
-            gridView ? "" : <BookingListView myBookings={myBookings}></BookingListView>
-          }
+          {gridView ? (
+            <BookingGridView myBookings={myBookings} handleDelete={handleDelete}></BookingGridView>
+          ) : (
+            <BookingListView
+              myBookings={myBookings}
+              handleDelete={handleDelete}
+            ></BookingListView>
+          )}
         </div>
       </div>
     </>
