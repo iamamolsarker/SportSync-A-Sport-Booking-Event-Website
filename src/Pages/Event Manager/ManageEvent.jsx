@@ -7,6 +7,11 @@ import { Helmet } from "react-helmet";
 
 const ManageEvent = () => {
   const { user } = useAuth();
+
+  if(!user){
+    return <LoaderAnimation/>
+  }
+
   return (
     <>
       <Helmet>
