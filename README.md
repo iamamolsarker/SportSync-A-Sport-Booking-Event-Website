@@ -1,12 +1,55 @@
-# React + Vite
+# sportSync
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+sportSync is an **Athletic Event Booking Platform** that connects athletes and sports lovers with local athletic events. Users can browse upcoming competitions, book their favorite events, and manage their own or hosted events. The project is a full-stack web application built with React, Firebase Authentication, Express, and MongoDB.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Live Site
 
-## Expanding the ESLint configuration
+👉 [Visit sportSync](https://sport-sync-ass-11.web.app/)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🎯 Project Purpose
+
+This project was built with:
+
+- Full-stack web development (MERN Stack)
+- Firebase Authentication
+- MongoDB server
+- Private route with react router
+- Responsive and user-friendly design
+
+---
+
+## ⚙️ Key Features
+
+- 🔐 **Authentication** with Firebase (Email/Password + Google)
+- 📅 **Event Creation & Management** (CRUD operations)
+- 🛒 **Book & Manage Events**
+- 📋 **My Bookings** view for users
+- 🧑‍💼 **Manage Events** dashboard for organizers
+- 🔍 Dynamic routing and route protection
+- 🧭 **404 Page** and **Loading Spinner**
+- 🍞 Toast notifications for user feedback
+- 🌐 Responsive design (Mobile | Tablet | Desktop)
+- 🧠 Dynamic document titles per route using React Helmet
+
+---
+
+
+### Client Side:
+- React
+- React Router
+- Tailwind CSS
+- Firebase Authentication
+- Axios
+- SweetAlert2
+- React Helmet Async
+
+### Server Side:
+- Express.js
+- MongoDB
+- CORS
+- dotenv
+- Firebase Admin SDK
