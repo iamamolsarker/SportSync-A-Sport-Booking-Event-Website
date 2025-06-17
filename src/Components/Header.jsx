@@ -16,7 +16,11 @@ const Header = () => {
         });
       })
       .catch((error) => {
-        console.log(error);
+        // console.log(error);
+        Swal.fire({
+          title: `${error.message}`,
+          icon: "error",
+        });
       });
   };
 

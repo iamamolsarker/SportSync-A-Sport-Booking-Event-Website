@@ -22,7 +22,7 @@ const CreateEvent = () => {
       )
       .then((res) => {
         const data = res.data;
-        console.log(data);
+        // console.log(data);
         if (data.insertedId) {
           Swal.fire({
             title: "Event Added Successfully!",
@@ -33,7 +33,12 @@ const CreateEvent = () => {
           navigate("/manage-event");
         }
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        Swal.fire({
+          title: `${error.message}`,
+          icon: "error",
+        });
+      });
   };
   return (
     <div className="w-full lg:max-w-[700px] mx-auto my-14 px-5 lg:px-0">

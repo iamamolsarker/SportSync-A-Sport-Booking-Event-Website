@@ -10,7 +10,7 @@ const GoogleLogin = ({from}) => {
   const handleGoogleLogin = () => {
     googleLogin()
       .then((result) => {
-        console.log(result.user);
+        // console.log(result.user);
         if (result.user) {
           Swal.fire({
             title: "Login successful!",

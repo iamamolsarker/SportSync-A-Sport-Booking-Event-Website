@@ -48,7 +48,11 @@ const MyBookingList = ({ myBookingsPromise }) => {
             }
           })
           .catch((error) => {
-            console.log(error.message);
+            // console.log(error.message);
+            Swal.fire({
+              title: `${error.message}`,
+              icon: "error",
+            });
           });
       }
     });

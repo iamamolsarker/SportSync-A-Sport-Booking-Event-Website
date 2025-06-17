@@ -26,7 +26,7 @@ const UpdateEvent = () => {
     const updatedFormData = new FormData(form);
     const updatedFormObjData = Object.fromEntries(updatedFormData.entries());
 
-    console.log(updatedFormObjData);
+    // console.log(updatedFormObjData);
 
     axios
       .put(
@@ -43,7 +43,12 @@ const UpdateEvent = () => {
           navigate("/manage-event");
         }
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        Swal.fire({
+          title: `${error.message}`,
+          icon: "error",
+        });
+      });
   };
   return (
     <div className="w-full lg:max-w-[700px] mx-auto my-14 px-5 lg:px-0">

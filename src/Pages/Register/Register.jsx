@@ -19,7 +19,7 @@ const Register = () => {
 
     await createUserWithEmail(email, password)
       .then((result) => {
-        console.log(result.user);
+        // console.log(result.user);
         if (result.user) {
           Swal.fire({
             title: "Registered successfully!",
@@ -32,7 +32,10 @@ const Register = () => {
         Swal.fire({
           title: `${error.message}`,
           icon: "error",
-        });
+        });Swal.fire({
+                  title: `${error.message}`,
+                  icon: "error",
+                });
       });
 
     await updateUser(name, photo)
