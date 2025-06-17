@@ -3,7 +3,7 @@ import React, { use, useState } from "react";
 import { RiDeleteBin6Line, RiEditLine } from "react-icons/ri";
 import Swal from "sweetalert2";
 import Lottie from "lottie-react";
-import noDataFound from "../../assets/animation/no_data_found.json"
+import noDataFound from "../../assets/animation/no_data_found.json";
 import { Link } from "react-router";
 
 const ManageEventList = ({ manageMyEventsPromise }) => {
@@ -48,11 +48,11 @@ const ManageEventList = ({ manageMyEventsPromise }) => {
 
   const handleEventUpdate = (id) => {
     console.log(id);
-  }
+  };
   return (
-    <>
+    <div className=" min-h-[65vh]">
       {myEvents.length ? (
-        <div className="max-w-[1300px] min-h-[65vh] mx-auto my-14 px-5 lg:px-0">
+        <div className="max-w-[1300px] mx-auto my-14 px-5 lg:px-0">
           <div className="overflow-x-auto rounded-box border border-base-content/5 bg-base-100">
             <table className="table">
               {/* head */}
@@ -82,7 +82,7 @@ const ManageEventList = ({ manageMyEventsPromise }) => {
                     <td className="text-lg font-medium">{event.location}</td>
                     <td>
                       <button
-                          onClick={() => handleEventUpdate(event._id)}
+                        onClick={() => handleEventUpdate(event._id)}
                         title="Edit Event"
                         className="border border-orange-500 p-2 rounded cursor-pointer mr-3"
                       >
@@ -106,17 +106,19 @@ const ManageEventList = ({ manageMyEventsPromise }) => {
           </div>
         </div>
       ) : (
-        <div className="max-w-[400px] mx-auto my-14 text-center px-5 lg:px-0 min-h-[65vh]">
+        <div className="max-w-[400px] mx-auto my-14 text-center px-5 lg:px-0 ">
           <Lottie animationData={noDataFound} loop={true} />
-          <Link
-            className="border border-orange-500 text-lg text-orange-500 font-semibold px-4 py-1.5 rounded-xl inline-block mt-6"
-            to="/add-event"
-          >
-            Add Event
-          </Link>
         </div>
       )}
-    </>
+      <div className="flex justify-center">
+        <Link
+          className="border border-orange-500 text-lg text-orange-500 font-semibold px-10 py-3 rounded-xl inline-block mt-6"
+          to="/add-event"
+        >
+          Add Event
+        </Link>
+      </div>
+    </div>
   );
 };
 
