@@ -1,18 +1,24 @@
-import React, { Suspense } from 'react';
-import ManageEventList from './ManageEventList';
-import useAuth from '../../Hooks/useAuth';
-import { manageMyEventsPromise } from '../../Api/manageEventApi';
-import LoaderAnimation from '../../Components/LoaderAnimation';
+import React, { Suspense } from "react";
+import ManageEventList from "./ManageEventList";
+import useAuth from "../../Hooks/useAuth";
+import { manageMyEventsPromise } from "../../Api/manageEventApi";
+import LoaderAnimation from "../../Components/LoaderAnimation";
+import { Helmet } from "react-helmet";
 
 const ManageEvent = () => {
-    const {user} = useAuth()
-    return (
-        <>
-            <Suspense fallback={<LoaderAnimation></LoaderAnimation>}>
-                <ManageEventList manageMyEventsPromise={manageMyEventsPromise(user.email)}></ManageEventList>
-            </Suspense>
-        </>
-    );
+  const { user } = useAuth();
+  return (
+    <>
+      <Helmet>
+        <title>Manage Event</title>
+      </Helmet>
+      <Suspense fallback={<LoaderAnimation></LoaderAnimation>}>
+        <ManageEventList
+          manageMyEventsPromise={manageMyEventsPromise(user.email)}
+        ></ManageEventList>
+      </Suspense>
+    </>
+  );
 };
 
 export default ManageEvent;

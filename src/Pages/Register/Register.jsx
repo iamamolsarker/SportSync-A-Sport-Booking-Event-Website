@@ -3,10 +3,11 @@ import { Link, useNavigate } from "react-router";
 import useAuth from "../../Hooks/useAuth";
 import GoogleLogin from "../../Components/GoogleLogin";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const Register = () => {
   const { createUserWithEmail, updateUser } = useAuth();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -24,8 +25,7 @@ const Register = () => {
             title: "Registered successfully!",
             icon: "success",
           });
-          navigate("/")
-
+          navigate("/");
         }
       })
       .catch((error) => {
@@ -44,6 +44,9 @@ const Register = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Register</title>
+      </Helmet>
       <div className="max-w-sm mx-auto min-h-screen items-center justify-center pt-24">
         <div>
           <h2 className="text-3xl font-semibold mb-5 text-center">

@@ -1,18 +1,24 @@
-import React, { Suspense } from 'react';
-import MyBookingList from './MyBookingList';
-import useAuth from '../../Hooks/useAuth';
-import LoaderAnimation from '../../Components/LoaderAnimation';
-import { myBookingsPromise } from '../../Api/myBookingsApi';
+import React, { Suspense } from "react";
+import MyBookingList from "./MyBookingList";
+import useAuth from "../../Hooks/useAuth";
+import LoaderAnimation from "../../Components/LoaderAnimation";
+import { myBookingsPromise } from "../../Api/myBookingsApi";
+import { Helmet } from "react-helmet";
 
 const MyBookings = () => {
-    const {user} = useAuth();
-    return (
-        <>
-            <Suspense fallback={<LoaderAnimation></LoaderAnimation>}>
-                <MyBookingList myBookingsPromise={myBookingsPromise(user.email)}></MyBookingList>
-            </Suspense>
-        </>
-    );
+  const { user } = useAuth();
+  return (
+    <>
+      <Helmet>
+        <title>My Booking</title>
+      </Helmet>
+      <Suspense fallback={<LoaderAnimation></LoaderAnimation>}>
+        <MyBookingList
+          myBookingsPromise={myBookingsPromise(user.email)}
+        ></MyBookingList>
+      </Suspense>
+    </>
+  );
 };
 
 export default MyBookings;

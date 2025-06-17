@@ -3,10 +3,11 @@ import useAuth from "../../Hooks/useAuth";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router";
+import { Helmet } from "react-helmet";
 
 const CreateEvent = () => {
   const { user } = useAuth();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleAddEvent = (e) => {
     e.preventDefault();
@@ -23,17 +24,22 @@ const CreateEvent = () => {
           Swal.fire({
             title: "Event Added Successfully!",
             icon: "success",
-            confirmButtonColor: "oklch(70.5% 0.213 47.604)"
+            confirmButtonColor: "oklch(70.5% 0.213 47.604)",
           });
+          form.reset();
+          navigate("/manage-event");
         }
       })
       .catch((error) => console.log(error));
 
-      form.reset()
-      navigate('/manage-event');
+    
+    
   };
   return (
     <div className="w-full lg:max-w-[700px] mx-auto my-14 px-5 lg:px-0">
+      <Helmet>
+        <title>Create Event</title>
+      </Helmet>
       <div className=" mx-auto text-center mb-8">
         <h2 className="text-4xl md:text-5xl font-semibold mb-5">
           Host a Sports Event Today

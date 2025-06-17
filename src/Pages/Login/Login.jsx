@@ -3,12 +3,13 @@ import { Link, useLocation, useNavigate } from "react-router";
 import useAuth from "../../Hooks/useAuth";
 import GoogleLogin from "../../Components/GoogleLogin";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const Login = () => {
   const { loginUserWithEmail } = useAuth();
   const location = useLocation();
   const navigate = useNavigate();
-  const from = location.state || "/"
+  const from = location.state || "/";
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -37,6 +38,9 @@ const Login = () => {
   };
   return (
     <>
+      <Helmet>
+        <title>Login</title>
+      </Helmet>
       <div className="max-w-sm mx-auto min-h-screen items-center justify-center pt-24">
         <div>
           <h2 className="text-3xl font-semibold mb-5 text-center">

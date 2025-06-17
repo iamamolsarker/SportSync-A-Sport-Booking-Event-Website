@@ -4,6 +4,7 @@ import { useLoaderData } from "react-router";
 import useAuth from "../../Hooks/useAuth";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const EventDetails = () => {
   const {
@@ -22,7 +23,7 @@ const EventDetails = () => {
   const handleBooking = () => {
     const eventBookingData = {
       bookedBy: user.email,
-      eventId: _id
+      eventId: _id,
     };
     axios
       .post("http://localhost:5000/event-bookings/", eventBookingData)
@@ -37,21 +38,24 @@ const EventDetails = () => {
                 <br>
                 <p class="font-medium text-orange-500">Event Date: ${eventDate}</p>
                 `,
-                confirmButtonColor: "#ff6900"
-        });
+            confirmButtonColor: "#ff6900",
+          });
         }
       })
       .catch(() => {
         Swal.fire({
-            title: "You have already booked this event!",
-            icon: "error",
-            confirmButtonColor: "#ff6900"
+          title: "You have already booked this event!",
+          icon: "error",
+          confirmButtonColor: "#ff6900",
         });
-      })
+      });
   };
 
   return (
     <div className="max-w-[650px] mx-auto my-14 px-5 lg:px-2">
+      <Helmet>
+        <title>{eventName}</title>
+      </Helmet>
       <div className="rounded-xl border border-gray-300">
         <div className="relative">
           <img
@@ -79,7 +83,9 @@ const EventDetails = () => {
               Organized by: {creatorName}
             </div>
           </div>
-          <div className="border border-gray-300 p-2 text-center font-medium text-gray-600 rounded-xl mb-2">{user.email}</div>
+          <div className="border border-gray-300 p-2 text-center font-medium text-gray-600 rounded-xl mb-2">
+            {user.email}
+          </div>
           <button
             onClick={handleBooking}
             className="bg-gradient-to-r from-orange-500 to-red-600 text-white rounded-xl w-full block text-center px-3 py-3 font-medium"

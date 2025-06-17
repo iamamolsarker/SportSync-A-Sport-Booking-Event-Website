@@ -2,6 +2,7 @@ import React from "react";
 import { Navigate, useLoaderData, useNavigate } from "react-router";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const UpdateEvent = () => {
   const {
@@ -17,7 +18,7 @@ const UpdateEvent = () => {
     status,
   } = useLoaderData();
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleUpdateEvent = (e) => {
     e.preventDefault();
@@ -36,13 +37,16 @@ const UpdateEvent = () => {
             icon: "success",
             confirmButtonColor: "oklch(70.5% 0.213 47.604)",
           });
-          navigate('/manage-event')
+          navigate("/manage-event");
         }
       })
       .catch((error) => console.log(error));
   };
   return (
     <div className="w-full lg:max-w-[700px] mx-auto my-14 px-5 lg:px-0">
+      <Helmet>
+        <title>Update Event</title>
+      </Helmet>
       <div className=" mx-auto text-center mb-8">
         <h2 className="text-4xl md:text-5xl font-semibold mb-5">
           Host a Sports Event Today
