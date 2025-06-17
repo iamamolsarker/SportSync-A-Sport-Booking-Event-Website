@@ -14,7 +14,7 @@ const MyBookings = () => {
       </Helmet>
       <Suspense fallback={<LoaderAnimation></LoaderAnimation>}>
         <MyBookingList
-          myBookingsPromise={myBookingsPromise(user.email)}
+          myBookingsPromise={myBookingsPromise(user.email, user.accessToken)}
         ></MyBookingList>
       </Suspense>
     </>

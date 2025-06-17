@@ -1,3 +1,8 @@
-export const manageMyEventsPromise = email => {
-    return fetch(`http://localhost:5000/events/?email=${email}`).then(res => res.json())
+export const manageMyEventsPromise = (email, accessToken) => {
+    return fetch(`http://localhost:5000/events/?email=${email}`, {
+        headers: {
+            authorization : `Bearer ${accessToken}`
+        }
+    })
+    .then(res => res.json())
 }

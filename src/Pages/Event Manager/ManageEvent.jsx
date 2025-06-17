@@ -14,7 +14,7 @@ const ManageEvent = () => {
       </Helmet>
       <Suspense fallback={<LoaderAnimation></LoaderAnimation>}>
         <ManageEventList
-          manageMyEventsPromise={manageMyEventsPromise(user.email)}
+          manageMyEventsPromise={manageMyEventsPromise(user.email, user.accessToken)}
         ></ManageEventList>
       </Suspense>
     </>
