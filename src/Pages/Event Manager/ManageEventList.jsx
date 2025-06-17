@@ -23,7 +23,9 @@ const ManageEventList = ({ manageMyEventsPromise }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .delete(`http://localhost:5000/events/${id}`)
+          .delete(
+            `https://assignment-11-sport-sync-server.vercel.app/events/${id}`
+          )
           .then((res) => {
             if (res.data.deletedCount) {
               Swal.fire({
@@ -78,23 +80,23 @@ const ManageEventList = ({ manageMyEventsPromise }) => {
                     <td className="text-lg font-medium">{event.location}</td>
                     <td>
                       <div className="flex justify-center items-center gap-3">
-                        <Link 
-                        to={`/update/${event._id}`}
-                        title="Edit Event"
-                        className="border border-orange-500 p-2 rounded cursor-pointer inline-block"
-                      >
-                        <RiEditLine size="20px" className="text-orange-500" />
-                      </Link>
-                      <button
-                        onClick={() => handleEventDelete(event._id)}
-                        className="border border-red-500 p-2 rounded cursor-pointer"
-                        title="Delete Event"
-                      >
-                        <RiDeleteBin6Line
-                          size="20px"
-                          className="text-red-500"
-                        />
-                      </button>
+                        <Link
+                          to={`/update/${event._id}`}
+                          title="Edit Event"
+                          className="border border-orange-500 p-2 rounded cursor-pointer inline-block"
+                        >
+                          <RiEditLine size="20px" className="text-orange-500" />
+                        </Link>
+                        <button
+                          onClick={() => handleEventDelete(event._id)}
+                          className="border border-red-500 p-2 rounded cursor-pointer"
+                          title="Delete Event"
+                        >
+                          <RiDeleteBin6Line
+                            size="20px"
+                            className="text-red-500"
+                          />
+                        </button>
                       </div>
                     </td>
                   </tr>

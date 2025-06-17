@@ -29,7 +29,10 @@ const UpdateEvent = () => {
     console.log(updatedFormObjData);
 
     axios
-      .put(`http://localhost:5000/events/${_id}`, updatedFormObjData)
+      .put(
+        `https://assignment-11-sport-sync-server.vercel.app/events/${_id}`,
+        updatedFormObjData
+      )
       .then((res) => {
         if (res.data.modifiedCount) {
           Swal.fire({

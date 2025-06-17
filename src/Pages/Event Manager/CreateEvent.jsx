@@ -16,7 +16,10 @@ const CreateEvent = () => {
     const formObjData = Object.fromEntries(formData.entries());
 
     axios
-      .post("http://localhost:5000/events/", formObjData)
+      .post(
+        "https://assignment-11-sport-sync-server.vercel.app/events/",
+        formObjData
+      )
       .then((res) => {
         const data = res.data;
         console.log(data);
@@ -31,9 +34,6 @@ const CreateEvent = () => {
         }
       })
       .catch((error) => console.log(error));
-
-    
-    
   };
   return (
     <div className="w-full lg:max-w-[700px] mx-auto my-14 px-5 lg:px-0">

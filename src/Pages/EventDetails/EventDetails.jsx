@@ -26,7 +26,10 @@ const EventDetails = () => {
       eventId: _id,
     };
     axios
-      .post("http://localhost:5000/event-bookings/", eventBookingData)
+      .post(
+        "https://assignment-11-sport-sync-server.vercel.app/event-bookings/",
+        eventBookingData
+      )
       .then((res) => {
         const data = res.data;
         if (data.insertedId) {

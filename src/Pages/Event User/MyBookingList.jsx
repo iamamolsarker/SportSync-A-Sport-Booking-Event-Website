@@ -5,7 +5,7 @@ import BookingGridView from "./BookingGridView";
 import axios from "axios";
 import Swal from "sweetalert2";
 import Lottie from "lottie-react";
-import noDataFound from "../../assets/animation/no_data_found.json"
+import noDataFound from "../../assets/animation/no_data_found.json";
 import { Link } from "react-router";
 
 const MyBookingList = ({ myBookingsPromise }) => {
@@ -29,7 +29,9 @@ const MyBookingList = ({ myBookingsPromise }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .delete(`http://localhost:5000/event-bookings/${eventId}`)
+          .delete(
+            `https://assignment-11-sport-sync-server.vercel.app/event-bookings/${eventId}`
+          )
           .then((res) => {
             if (res.data.deletedCount) {
               Swal.fire({
@@ -80,7 +82,12 @@ const MyBookingList = ({ myBookingsPromise }) => {
       ) : (
         <div className="max-w-[400px] mx-auto my-14 text-center px-5 lg:px-0 min-h-[65vh]">
           <Lottie animationData={noDataFound} loop={true} />
-          <Link className="border border-orange-500 text-lg text-orange-500 font-semibold px-4 py-1.5 rounded-xl inline-block mt-6" to="/all-event">See All Event</Link>
+          <Link
+            className="border border-orange-500 text-lg text-orange-500 font-semibold px-4 py-1.5 rounded-xl inline-block mt-6"
+            to="/all-event"
+          >
+            See All Event
+          </Link>
         </div>
       )}
     </>

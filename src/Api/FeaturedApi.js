@@ -1,3 +1,5 @@
 export const featuredEventsPromise = () => {
-    return fetch("http://localhost:5000/events/featured").then(res => res.json())
-}
+  return fetch(
+    "https://assignment-11-sport-sync-server.vercel.app/events/featured"
+  ).then((res) => res.json());
+};
