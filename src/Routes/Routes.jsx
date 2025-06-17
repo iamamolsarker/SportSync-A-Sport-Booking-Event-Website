@@ -11,6 +11,7 @@ import PrivateRoutes from "./PrivateRoutes";
 import CreateEvent from "../Pages/Event Manager/CreateEvent";
 import EventDetails from "../Pages/EventDetails/EventDetails";
 import LoaderAnimation from "../Components/LoaderAnimation";
+import UpdateEvent from "../Pages/Event Manager/UpdateEvent";
 
 export const router = createBrowserRouter([
   {
@@ -33,6 +34,12 @@ export const router = createBrowserRouter([
         {
           path: "/add-event",
           element:<PrivateRoutes><CreateEvent></CreateEvent></PrivateRoutes>
+        },
+        {
+          path: "/update/:id",
+          element:<PrivateRoutes><UpdateEvent></UpdateEvent></PrivateRoutes>,
+          loader: ({params}) => fetch(`http://localhost:5000/events/${params.id}`),
+          hydrateFallbackElement: <LoaderAnimation></LoaderAnimation>
         },
         {
           path: "/all-event",

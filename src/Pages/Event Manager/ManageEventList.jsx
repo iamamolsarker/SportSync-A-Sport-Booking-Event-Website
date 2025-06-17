@@ -45,10 +45,6 @@ const ManageEventList = ({ manageMyEventsPromise }) => {
       }
     });
   };
-
-  const handleEventUpdate = (id) => {
-    console.log(id);
-  };
   return (
     <div className=" min-h-[65vh]">
       {myEvents.length ? (
@@ -81,13 +77,14 @@ const ManageEventList = ({ manageMyEventsPromise }) => {
                     <td className="text-lg font-medium">{event.eventDate}</td>
                     <td className="text-lg font-medium">{event.location}</td>
                     <td>
-                      <button
-                        onClick={() => handleEventUpdate(event._id)}
+                      <div className="flex justify-center items-center gap-3">
+                        <Link 
+                        to={`/update/${event._id}`}
                         title="Edit Event"
-                        className="border border-orange-500 p-2 rounded cursor-pointer mr-3"
+                        className="border border-orange-500 p-2 rounded cursor-pointer inline-block"
                       >
                         <RiEditLine size="20px" className="text-orange-500" />
-                      </button>
+                      </Link>
                       <button
                         onClick={() => handleEventDelete(event._id)}
                         className="border border-red-500 p-2 rounded cursor-pointer"
@@ -98,6 +95,7 @@ const ManageEventList = ({ manageMyEventsPromise }) => {
                           className="text-red-500"
                         />
                       </button>
+                      </div>
                     </td>
                   </tr>
                 ))}
