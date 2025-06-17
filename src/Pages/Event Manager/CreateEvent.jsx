@@ -2,9 +2,11 @@ import React from "react";
 import useAuth from "../../Hooks/useAuth";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router";
 
 const CreateEvent = () => {
   const { user } = useAuth();
+  const navigate = useNavigate()
 
   const handleAddEvent = (e) => {
     e.preventDefault();
@@ -26,6 +28,9 @@ const CreateEvent = () => {
         }
       })
       .catch((error) => console.log(error));
+
+      form.reset()
+      navigate('/manage-event');
   };
   return (
     <div className="w-full lg:max-w-[700px] mx-auto my-14 px-5 lg:px-0">

@@ -1,11 +1,9 @@
 import React from "react";
-import useAuth from "../../Hooks/useAuth";
-import { useLoaderData } from "react-router";
+import { Navigate, useLoaderData, useNavigate } from "react-router";
 import axios from "axios";
 import Swal from "sweetalert2";
 
 const UpdateEvent = () => {
-  const { user } = useAuth();
   const {
     eventName,
     eventType,
@@ -18,6 +16,8 @@ const UpdateEvent = () => {
     _id,
     status,
   } = useLoaderData();
+
+  const navigate = useNavigate()
 
   const handleUpdateEvent = (e) => {
     e.preventDefault();
@@ -36,6 +36,7 @@ const UpdateEvent = () => {
             icon: "success",
             confirmButtonColor: "oklch(70.5% 0.213 47.604)",
           });
+          navigate('/manage-event')
         }
       })
       .catch((error) => console.log(error));
