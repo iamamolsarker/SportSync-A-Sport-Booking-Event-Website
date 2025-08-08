@@ -52,4 +52,4 @@ This project was built with:
 - MongoDB
 - CORS
 - dotenv
-- Firebase Admin SDK
+- Firebase Admin
