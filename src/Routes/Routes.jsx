@@ -14,6 +14,7 @@ import LoaderAnimation from "../Components/LoaderAnimation";
 import UpdateEvent from "../Pages/Event Manager/UpdateEvent";
 import Contact from "../Pages/Contact/Contact";
 import TermsCondition from "../Pages/Terms & Conditions/TermsCondition";
+import PrivacyPolicy from "../Pages/Privacy Policy/PrivacyPolicy";
 
 export const router = createBrowserRouter([
   {
@@ -97,6 +98,10 @@ export const router = createBrowserRouter([
       {
         path: "terms-conditions",
         Component: TermsCondition
+      },
+      {
+        path:"privacy",
+        Component: PrivacyPolicy
       }
     ],
   },
