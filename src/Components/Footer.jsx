@@ -58,7 +58,7 @@ const Footer = () => {
           <h2 className="text-lg text-white font-semibold mb-5">Legal</h2>
           <ul className="text-gray-300 space-y-4">
             <li>
-              <Link to="/">Terms & Conditions</Link>
+              <Link to="/terms-conditions">Terms & Conditions</Link>
             </li>
             <li>
               <Link to="/">Privacy Policy</Link>

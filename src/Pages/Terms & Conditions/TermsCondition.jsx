@@ -3,7 +3,7 @@ import React from "react";
 const TermsCondition = () => {
   return (
     <div>
-      <h1>Terms & Conditions</h1>
+      <h1 className="text-4xl md:text-5xl font-semibold mb-5">Terms & Conditions</h1>
       <p>
         Welcome to SportSync ("we", "our", "us"). By accessing or using our
         website, mobile application, or related services ("Platform"), you agree

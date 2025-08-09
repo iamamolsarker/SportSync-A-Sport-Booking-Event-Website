@@ -13,6 +13,7 @@ import EventDetails from "../Pages/EventDetails/EventDetails";
 import LoaderAnimation from "../Components/LoaderAnimation";
 import UpdateEvent from "../Pages/Event Manager/UpdateEvent";
 import Contact from "../Pages/Contact/Contact";
+import TermsCondition from "../Pages/Terms & Conditions/TermsCondition";
 
 export const router = createBrowserRouter([
   {
@@ -93,7 +94,10 @@ export const router = createBrowserRouter([
         path: "contact",
         Component: Contact
       },
-      
+      {
+        path: "terms-conditions",
+        Component: TermsCondition
+      }
     ],
   },
 ]);

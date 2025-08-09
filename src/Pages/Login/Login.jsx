@@ -41,7 +41,7 @@ const Login = () => {
       <Helmet>
         <title>Login</title>
       </Helmet>
-      <div className="max-w-sm mx-auto min-h-screen items-center justify-center pt-24">
+      <div className="max-w-sm mx-auto items-center justify-center pt-24">
         <div>
           <h2 className="text-3xl font-semibold mb-5 text-center">
             Login to your account
