@@ -13,8 +13,8 @@ import { Link } from "react-router";
 const Footer = () => {
   return (
     <div className="bg-[#111827] py-10 px-5 lg:px-0">
-      <div className="container mx-auto flex flex-col md:flex-row gap-6">
-        <div className="space-y-4 text-gray-300 flex-1">
+      <div className="max-w-[1300px] mx-auto flex flex-col md:flex-row gap-6">
+        <div className="space-y-4 text-gray-300 flex-1 basis-1/9">
           <Link
             to="/"
             className="text-3xl font-extrabold tracking-wider text-transparent bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text"
@@ -95,9 +95,9 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-      <div className="container mx-auto flex justify-between gap-6 mt-10 pt-10 border-t border-gray-700 text-gray-500 flex-col md:flex-row">
-        <p>© 2024 SportSync. All rights reserved.</p>
-        <p>Built with passion for freelancers worldwide</p>
+      <div className="max-w-[1300px] mx-auto flex justify-between gap-6 mt-10 pt-10 border-t border-gray-700 text-gray-500 flex-col md:flex-row">
+        <p>© 2025 SportSync. All rights reserved.</p>
+        <p>Built with passion for athlete worldwide</p>
       </div>
     </div>
   );

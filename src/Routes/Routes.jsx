@@ -12,6 +12,7 @@ import CreateEvent from "../Pages/Event Manager/CreateEvent";
 import EventDetails from "../Pages/EventDetails/EventDetails";
 import LoaderAnimation from "../Components/LoaderAnimation";
 import UpdateEvent from "../Pages/Event Manager/UpdateEvent";
+import Contact from "../Pages/Contact/Contact";
 
 export const router = createBrowserRouter([
   {
@@ -88,6 +89,11 @@ export const router = createBrowserRouter([
         path: "login",
         Component: Login,
       },
+      {
+        path: "contact",
+        Component: Contact
+      },
+      
     ],
   },
 ]);

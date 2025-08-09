@@ -30,6 +30,7 @@ const Header = () => {
       <NavLink to="/all-event">All Events</NavLink>
       <NavLink to="/my-event">My Bookings</NavLink>
       <NavLink to="/manage-event">Manage Event</NavLink>
+      <NavLink to="/contact">Contact</NavLink>
     </>
   );
   return (
