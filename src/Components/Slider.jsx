@@ -7,13 +7,14 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import SwimmingBg from "../assets/swimming.avif";
 import MarathonBg from "../assets/marathon.avif";
 import BasketballBg from "../assets/basketball.avif";
+import { Link } from "react-router";
 
 
 
 const Slider = () => {
   return (
     <Swiper
-      modules={[Pagination, A11y, Autoplay, EffectFade]}
+      modules={[Pagination, A11y,  EffectFade]}
       spaceBetween={50}
       slidesPerView={1}
       autoplay
@@ -25,12 +26,12 @@ const Slider = () => {
       <div className="min-h-[75vh] flex flex-col items-center justify-center z-10">
         <SwiperSlide>
           <div
-            className=" px-15 min-h-[75vh] flex justify-center"
+            className=" px-5 md:px-15 min-h-[75vh] flex justify-center"
             style={{ backgroundImage: `url(${MarathonBg})`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}
           >
             <div className="hero-overlay absolute"></div>
             <div className="flex flex-col justify-center items-center gap-5 w-full md:max-w-1/2 text-center z-10">
-              <h2 className="text-5xl md:text-7xl font-semibold text-white">
+              <h2 className="text-4xl md:text-7xl font-semibold text-white">
                 City Marathon Championship
               </h2>
               <p className="text-xl md:text-2xl font-medium text-white">
@@ -42,24 +43,24 @@ const Slider = () => {
                 finish line stronger than ever.
               </p>
               <div className="flex gap-6 w-full">
-                <button className="p-3 bg-gradient-to-r from-orange-500 to-red-600 text-white text-lg w-full font-semibold cursor-pointer">
+                <Link to={"/all-event"} className="p-3 bg-gradient-to-r from-orange-500 to-red-600 text-white text-lg w-full font-semibold cursor-pointer">
                   Book Event
-                </button>
-                <button className="p-3 bg-gradient-to-r from-orange-500 to-red-600 text-white text-lg w-full font-semibold cursor-pointer">
-                  View Details
-                </button>
+                </Link>
+                <Link to={'/contact'} className="p-3 bg-gradient-to-r from-orange-500 to-red-600 text-white text-lg w-full font-semibold cursor-pointer">
+                  Contact Us
+                </Link>
               </div>
             </div>
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div
-            className=" px-15 min-h-[75vh] flex justify-center"
+            className=" px-5 md:px-15 min-h-[75vh] flex justify-center"
             style={{ backgroundImage: `url(${SwimmingBg})`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}
           >
             <div className="hero-overlay absolute"></div>
             <div className="flex flex-col justify-center items-center gap-5 w-full md:max-w-1/2 text-center z-10">
-              <h2 className="text-5xl md:text-7xl font-semibold text-white">
+              <h2 className="text-4xl md:text-7xl font-semibold text-white">
                 Swimming World Championships
               </h2>
               <p className="text-xl md:text-2xl font-medium text-white">
@@ -81,12 +82,12 @@ const Slider = () => {
         </SwiperSlide>
         <SwiperSlide>
           <div
-            className=" px-15 min-h-[75vh] flex justify-center"
+            className=" px-5 md:px-15 min-h-[75vh] flex justify-center"
             style={{ backgroundImage: `url(${BasketballBg})`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}
           >
             <div className="hero-overlay absolute"></div>
             <div className="flex flex-col justify-center items-center gap-5 w-full md:max-w-1/2 text-center z-10">
-              <h2 className="text-5xl md:text-7xl font-semibold text-white">
+              <h2 className="text-4xl md:text-7xl font-semibold text-white">
                 Basketball Tournament Finals
               </h2>
               <p className="text-xl md:text-2xl font-medium text-white">

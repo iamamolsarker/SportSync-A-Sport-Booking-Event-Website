@@ -47,8 +47,8 @@ const leaderboard = [
 
 const TopPlayer = () => {
     return (
-        <div className="bg-red-50 dark:bg-gray-800  px-5  md:px-1 py-14">
-              <div className="w-full md:max-w-1/3 mx-auto text-center mb-8">
+        <div className="bg-base-100 dark:bg-gray-800 px-5 l py-14">
+              <div className="w-full lg:max-w-1/3 mx-auto text-center mb-8">
                 <h2 className="text-4xl md:text-5xl font-semibold mb-5">
                   Top Athlete of the month
                 </h2>

@@ -10,7 +10,7 @@ const Contact = () => {
         <Helmet>
                 <title>Contact</title>
             </Helmet>
-        <div className="px-5 md:px-1 py-14">
+        <div className="bg-gray-100 dark:bg-gray-800 px-5 md:px-1 py-14">
       <div className="w-full lg:max-w-1/3 mx-auto text-center mb-8">
         <h2 className="text-4xl md:text-5xl font-semibold mb-5">
           Get in touch

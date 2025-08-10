@@ -6,3 +6,7 @@
     width: 12px !important;
     height: 12px !important;
 }
+.swiper-wrapper{
+  -webkit-transition-timing-function: linear !important;
+  transition-timing-function: linear !important; 
+}

@@ -5,8 +5,8 @@ const ContactUsForm = () => {
   const handleContactSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
-    const formData = new FormData(form);
-    const formObj = Object.fromEntries(formData.entries());
+    // const formData = new FormData(form);
+    // const formObj = Object.fromEntries(formData.entries());
 
     // For demo, just alert the user
     Swal.fire({

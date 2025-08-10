@@ -82,7 +82,7 @@ const Header = () => {
                 alt=""
                 data-tooltip-id="profile-img-tooltip"
                 data-tooltip-content={`${user.displayName}`}
-                className="w-[55px] h-[55px] object-contain mr-1 border border-gray-200 rounded-full"
+                className="w-[50px] h-[50px] object-contain mr-1 border border-gray-200 rounded-full"
               />
               <Link
                 onClick={handleLogout}

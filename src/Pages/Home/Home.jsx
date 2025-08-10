@@ -5,6 +5,8 @@ import PopularSports from '../../Components/PopularSports';
 import FeaturedEvents from '../../Components/FeaturedEvents';
 import { Helmet } from 'react-helmet';
 import TopPlayer from '../../Components/TopPlayer';
+import OurPartner from '../../Components/OurPartner';
+import Contact from '../Contact/Contact';
 
 const Home = () => {
     return (
@@ -14,9 +16,11 @@ const Home = () => {
             </Helmet>
             <Slider></Slider>
             <FeaturedEvents></FeaturedEvents>
+            <OurPartner/>
             <TopPlayer/>
             <Testimonials></Testimonials>
             <PopularSports></PopularSports>
+            <Contact/>
         </>
     );
 };

@@ -55,7 +55,7 @@ const EventDetails = () => {
   };
 
   return (
-    <div className="max-w-[650px] mx-auto my-14 px-5 lg:px-2">
+    <div className="max-w-[1300px] mx-auto my-14 px-5 lg:px-2">
       <Helmet>
         <title>{eventName}</title>
       </Helmet>
@@ -64,7 +64,7 @@ const EventDetails = () => {
           <img
             src={eventImage}
             alt=""
-            className="w-full min-h-[220px] object-cover rounded-t-xl"
+            className="w-full h-[450px] object-cover rounded-t-xl"
           />
           <p className="bg-gradient-to-r from-orange-500 to-red-600 text-white rounded-full px-3 py-1.5 font-medium absolute top-5 left-5">
             {eventType}
