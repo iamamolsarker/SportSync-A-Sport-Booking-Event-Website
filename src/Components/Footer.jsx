@@ -64,10 +64,10 @@ const Footer = () => {
               <Link to="/privacy">Privacy Policy</Link>
             </li>
             <li>
-              <Link to="/">Cookie Policy</Link>
+              <Link to="/cookie">Cookie Policy</Link>
             </li>
             <li>
-              <Link to="/">Dispute Resolution</Link>
+              <Link to="/dispute">Dispute Resolution</Link>
             </li>
           </ul>
         </div>

@@ -15,6 +15,8 @@ import UpdateEvent from "../Pages/Event Manager/UpdateEvent";
 import Contact from "../Pages/Contact/Contact";
 import TermsCondition from "../Pages/Terms & Conditions/TermsCondition";
 import PrivacyPolicy from "../Pages/Privacy Policy/PrivacyPolicy";
+import Cookie from "../Pages/Cookie/Cookie";
+import Dispute from "../Pages/Dispute/Dispute";
 
 export const router = createBrowserRouter([
   {
@@ -102,6 +104,14 @@ export const router = createBrowserRouter([
       {
         path:"privacy",
         Component: PrivacyPolicy
+      },
+      {
+        path: "Cookie",
+        Component: Cookie
+      },
+      {
+        path:"dispute",
+        Component: Dispute
       }
     ],
   },
