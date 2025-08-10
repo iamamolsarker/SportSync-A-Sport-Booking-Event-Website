@@ -49,7 +49,7 @@ const CreateEvent = () => {
         <h2 className="text-4xl md:text-5xl font-semibold mb-5">
           Host a Sports Event Today
         </h2>
-        <p className="text-lg font-medium text-[#494848]">
+        <p className="text-lg font-medium text-base-content">
           Organize exciting competitions for any sport. From registration to
           results, manage it all in one place and offer participants a
           world-class experience.

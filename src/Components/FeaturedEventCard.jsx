@@ -10,7 +10,7 @@ const FeaturedEventCard = ({ featuredEventsPromise }) => {
         <h2 className="text-4xl md:text-5xl font-semibold mb-5">
           Featured Events
         </h2>
-        <p className="text-lg font-medium text-[#494848]">
+        <p className="text-lg font-medium text-base-content">
           Discover the most exciting athletic events happening near you. Don't miss out on these amazing competitions!
         </p>
       </div>

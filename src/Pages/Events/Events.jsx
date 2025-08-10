@@ -15,7 +15,7 @@ const Events = () => {
           <h2 className="text-4xl md:text-5xl font-semibold mb-5">
             The Ultimate Sports Challenge
           </h2>
-          <p className="text-lg font-medium text-[#494848]">
+          <p className="text-lg font-medium text-base-content">
             Join thousands of passionate athletes in a test of strength,
             strategy, and skill. Compete, connect, and celebrate the spirit of
             the game at every level.

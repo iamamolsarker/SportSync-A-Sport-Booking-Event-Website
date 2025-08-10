@@ -59,7 +59,7 @@ const UpdateEvent = () => {
         <h2 className="text-4xl md:text-5xl font-semibold mb-5">
           Host a Sports Event Today
         </h2>
-        <p className="text-lg font-medium text-[#494848]">
+        <p className="text-lg font-medium text-base-content">
           Organize exciting competitions for any sport. From registration to
           results, manage it all in one place and offer participants a
           world-class experience.
@@ -69,7 +69,7 @@ const UpdateEvent = () => {
         <form onSubmit={handleUpdateEvent} className="flex flex-col gap-5">
           <div className="flex flex-col gap-1">
             <label
-              className="text-lg font-medium text-gray-700"
+              className="text-lg font-medium text-base-content"
               for="eventName"
             >
               Event Title
@@ -85,7 +85,7 @@ const UpdateEvent = () => {
           </div>
           <div className="flex flex-col gap-1">
             <label
-              className="text-lg font-medium text-gray-700"
+              className="text-lg font-medium text-base-content"
               for="eventImage"
             >
               Event Image URL
@@ -101,7 +101,7 @@ const UpdateEvent = () => {
           </div>
           <div className="flex flex-col gap-1">
             <label
-              className="text-lg font-medium text-gray-700"
+              className="text-lg font-medium text-base-content"
               for="eventDate"
             >
               Event Date
@@ -116,7 +116,7 @@ const UpdateEvent = () => {
             />
           </div>
           <div className="flex flex-col gap-1">
-            <label className="text-lg font-medium text-gray-700" for="location">
+            <label className="text-lg font-medium text-base-content" for="location">
               Event Location
             </label>
             <input
@@ -131,7 +131,7 @@ const UpdateEvent = () => {
           <div className="flex gap-2">
             <div className="flex flex-col gap-1 w-1/2">
               <label
-                className="text-lg font-medium text-gray-700"
+                className="text-lg font-medium text-base-content"
                 for="eventType"
               >
                 Event Type
@@ -151,7 +151,7 @@ const UpdateEvent = () => {
               </select>
             </div>
             <div className="flex flex-col gap-1 w-1/2">
-              <label className="text-lg font-medium text-gray-700" for="status">
+              <label className="text-lg font-medium text-base-content" for="status">
                 Event status
               </label>
               <select
@@ -169,7 +169,7 @@ const UpdateEvent = () => {
           </div>
           <div className="flex flex-col gap-1">
             <label
-              className="text-lg font-medium text-gray-700"
+              className="text-lg font-medium text-base-content"
               for="description"
             >
               Event Description
@@ -185,7 +185,7 @@ const UpdateEvent = () => {
           </div>
           <div className="flex flex-col gap-1">
             <label
-              className="text-lg font-medium text-gray-700"
+              className="text-lg font-medium text-base-content"
               for="creatorName"
             >
               Event Organizer
@@ -201,7 +201,7 @@ const UpdateEvent = () => {
           </div>
           <div className="flex flex-col gap-1">
             <label
-              className="text-lg font-medium text-gray-700"
+              className="text-lg font-medium text-base-content"
               for="creatorEmail"
             >
               Organizer Email
