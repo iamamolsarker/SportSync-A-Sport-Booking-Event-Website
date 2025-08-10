@@ -14,7 +14,7 @@ import { Link } from "react-router";
 const Slider = () => {
   return (
     <Swiper
-      modules={[Pagination, A11y,  EffectFade]}
+      modules={[Pagination, A11y, Autoplay, EffectFade]}
       spaceBetween={50}
       slidesPerView={1}
       autoplay

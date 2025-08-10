@@ -56,7 +56,7 @@ const TopPlayer = () => {
                   Our top performer with highest record for the current month.
                 </p>
               </div>
-              <div className="max-w-[1300px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-6">
+              <div className="max-w-[1300px] mx-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {
                     leaderboard.map((player)=> <div className='flex flex-col gap-1 items-center '>
                     <img src={player.image} alt="" className='mb-4 border border-gray-200 rounded-t-2xl shadow-sm' />

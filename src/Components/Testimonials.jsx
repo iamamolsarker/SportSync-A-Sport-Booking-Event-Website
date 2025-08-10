@@ -8,8 +8,8 @@ import tabzImg from "../assets/gabriel.jpg";
 
 const Testimonials = () => {
   return (
-    <div className="bg-red-50 dark:bg-gray-900 px-5  md:px-1 py-14">
-      <div className="w-full md:max-w-1/3 mx-auto text-center mb-8">
+    <div className="bg-red-50 dark:bg-gray-900 px-5 py-14">
+      <div className="w-full lg:max-w-1/3 mx-auto text-center mb-8">
         <h2 className="text-4xl md:text-5xl font-semibold mb-5">
           What Athetes Say
         </h2>
@@ -18,7 +18,7 @@ const Testimonials = () => {
           event booking needs
         </p>
       </div>
-      <div className="max-w-[1300px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-6">
+      <div className="max-w-[1300px] mx-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
         <div className="p-5 border border-[#e2e8f0] bg-white rounded-xl shadow-sm">
           <LuQuote size="32px" className="text-orange-500" />
           <p className="text-gray-600 italic my-4">
