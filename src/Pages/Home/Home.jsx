@@ -4,6 +4,7 @@ import Testimonials from '../../Components/Testimonials';
 import PopularSports from '../../Components/PopularSports';
 import FeaturedEvents from '../../Components/FeaturedEvents';
 import { Helmet } from 'react-helmet';
+import TopPlayer from '../../Components/TopPlayer';
 
 const Home = () => {
     return (
@@ -13,6 +14,7 @@ const Home = () => {
             </Helmet>
             <Slider></Slider>
             <FeaturedEvents></FeaturedEvents>
+            <TopPlayer/>
             <Testimonials></Testimonials>
             <PopularSports></PopularSports>
         </>
